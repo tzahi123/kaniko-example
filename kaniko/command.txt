@@ -1,0 +1,16 @@
+#first create pod
+oc apply -f docker-socket.yaml
+
+#wait intill ready
+oc wait --for condition=containersready pod docker
+
+#get into the container
+oc exec -it docker -- sh
+
+#open http_proxy
+export HTTPS_PROXY=http://genproxy.amdocs.com:8080
+export HTTP_PROXY=http://genproxy.amdocs.com:8080
+
+#install git
+apk add -U git
+
