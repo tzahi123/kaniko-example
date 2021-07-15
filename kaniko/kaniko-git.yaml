@@ -6,7 +6,7 @@ spec:
   containers:
   - name: kaniko
     image: gcr.io/kaniko-project/executor:debug
-    args: ["--context=git://github.com/tzahi123/kaniko-demo",
+    args: ["--context=git://github.com/tzahi123/kaniko-example",
             "--destination=10.232.52.103:5000/artifactory/docker/external/tzahim:1.0.0"]
     volumeMounts:
       - name: kaniko-secret
