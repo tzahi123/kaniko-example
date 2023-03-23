@@ -11,7 +11,6 @@
 
 ```bash
 export PROJECT_ID=<your-project-id>
-export OS="darwin" # choice of darwin or amd64 
 ```
 
 4. **Set up local authentication to your project.**
