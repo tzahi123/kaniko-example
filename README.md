@@ -20,3 +20,6 @@ gcloud config set project $PROJECT_ID
 gcloud auth login
 gcloud auth application-default login
 ```
+## Provision the GKE cluster
+
+**NOTE:** [Compute Engine API](https://console.developers.google.com/apis/api/compute.googleapis.com/overview) and [Kubernetes Engine API](https://console.cloud.google.com/apis/api/container.googleapis.com/overview) are required for ```terraform apply``` to work on this configuration. Enable both APIs for your Google Cloud project before continuing.
