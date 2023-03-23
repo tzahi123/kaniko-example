@@ -4,8 +4,8 @@
 2. **Open a bash-compatible shell** (eg. [Google Cloud Shell](https://cloud.google.com/shell)) and ensure you have the following tools installed: 
 
 * [Google Cloud SDK version >= 325.0.0](https://cloud.google.com/sdk/docs/downloads-versioned-archives)
-* * [Terraform >= 0.13](https://www.terraform.io/downloads.html)
-* [kubectl](https://kubernetes.io/docs/tasks/tools/) ( >= v1.20)
+* * [Terraform >= v1.2.7](https://www.terraform.io/downloads.html)
+* [kubectl](https://kubernetes.io/docs/tasks/tools/) ( >= v1.24)
 
 3. **Set your Project ID environment variable and operating system.** 
 
