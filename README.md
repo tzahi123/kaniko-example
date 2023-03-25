@@ -3,9 +3,9 @@
 1. **[Create a Google Cloud Project](https://cloud.google.com/resource-manager/docs/creating-managing-projects)** and connect it to an existing Billing account.
 2. **Open a bash-compatible shell** (eg. [Google Cloud Shell](https://cloud.google.com/shell)) and ensure you have the following tools installed: 
 
-* ![Google Cloud SDK version >= 423.0.0](https://cloud.google.com/sdk/docs/downloads-versioned-archives)
-* * ![Terraform >= v1.2.7](https://www.terraform.io/downloads.html)
-* ![kubectl](https://kubernetes.io/docs/tasks/tools/) ( >= v1.24)
+* [Google Cloud SDK version >= 423.0.0](https://cloud.google.com/sdk/docs/downloads-versioned-archives)
+* * [Terraform >= v1.2.7](https://www.terraform.io/downloads.html)
+* [kubectl](https://kubernetes.io/docs/tasks/tools/) ( >= v1.24)
 
 3. **Set your Project ID environment variable and operating system.** 
 
