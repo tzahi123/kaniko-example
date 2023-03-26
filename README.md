@@ -1,18 +1,29 @@
-## Requirements
+## Quickstart 
 
-| Name | Version |
-|------|---------|
-| <a name="requirement_google"></a> [google](#requirement\_google) | 4.50.0 |
-| <a name="requirement_helm"></a> [helm](#requirement\_helm) | 2.5.1 |
-| <a name="requirement_kubernetes"></a> [kubernetes](#requirement\_kubernetes) | 2.12.1 |
+1. **[Create a Google Cloud Project](https://cloud.google.com/resource-manager/docs/creating-managing-projects)** and connect it to an existing Billing account.
+2. **Open a bash-compatible shell** (eg. [Google Cloud Shell](https://cloud.google.com/shell)) and ensure you have the following tools installed: 
 
-## Providers
+* [Google Cloud SDK version >= 423.0.0](https://cloud.google.com/sdk/docs/downloads-versioned-archives)
+* * [Terraform >= v1.2.7](https://www.terraform.io/downloads.html)
+* [kubectl](https://kubernetes.io/docs/tasks/tools/) ( >= v1.24)
 
-| Name | Version |
-|------|---------|
-| <a name="provider_google"></a> [google](#provider\_google) | 4.50.0 |
-| <a name="provider_google-beta"></a> [google-beta](#provider\_google-beta) | n/a |
+3. **Set your Project ID environment variable and operating system.** 
 
+```bash
+export PROJECT_ID=<your-project-id>
+```
+
+4. **Set up local authentication to your project.**
+
+```
+gcloud config set project $PROJECT_ID
+gcloud auth login
+gcloud auth application-default login
+```
+
+## Provision the GKE cluster
+
+**NOTE:** [Compute Engine API](https://console.developers.google.com/apis/api/compute.googleapis.com/overview) and [Kubernetes Engine API](https://console.cloud.google.com/apis/api/container.googleapis.com/overview) are required for ```terraform apply``` to work on this configuration. Enable both APIs for your Google Cloud project before continuing.
 
 ## Usage
 Simple usage is as follows:
