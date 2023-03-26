@@ -11,12 +11,56 @@
 | Name | Version |
 |------|---------|
 | <a name="provider_google"></a> [google](#provider\_google) | 4.50.0 |
-| <a name="provider_google.c-retail"></a> [google.c-retail](#provider\_google.c-retail) | 4.50.0 |
 | <a name="provider_google-beta"></a> [google-beta](#provider\_google-beta) | n/a |
 
-## Modules
 
-No modules.
+## Usage
+Simple usage is as follows:
+
+```hcl
+# google_client_config and kubernetes provider must be explicitly specified like the following.
+data "google_client_config" "default" {}
+
+provider "kubernetes" {
+  host                   = "https://${module.gke.endpoint}"
+  token                  = data.google_client_config.default.access_token
+  cluster_ca_certificate = base64decode(module.gke.ca_certificate)
+}
+
+module "gke" {
+  source                = "../../../google_kubernetes_engine"
+  project_id            = var.project_id
+  region                = var.region
+  network               = google_compute_network.main.name
+  network_id            = google_compute_network.main.id
+  cluster_name          = var.cluster_name
+  subnet_cidr           = var.subnet_cidr
+  services_range_name   = var.services_range_name 
+  services_cidr         = var.services_cidr
+  cluster_range_name    = var.cluster_range_name
+  cluster_cidr          = var.cluster_cidr
+  k8s_service_account   = var.k8s_service_account
+  locations             = var.locations
+  initial_node_count    = var.initial_node_count 
+  labels                = var.labels
+  master_cidr           = var.master_cidr
+  ingress_ports         = var.ingress_ports
+  node_pools            = var.node_pools
+  router_nat_name       = var.router_nat_name
+  router_name           = var.router_name
+  url_prefix            = var.url_prefix
+}
+
+```
+<!-- do not understand what this is about -->
+Then perform the following commands on the root folder:
+
+- `terraform init` to get the plugins
+- `terraform plan` to see the infrastructure plan
+- `terraform apply` to apply the infrastructure build
+- `terraform destroy` to destroy the built infrastructure
+
+<!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 
 ## Resources
 
@@ -57,6 +101,7 @@ No modules.
 
 ## Outputs
 
-| Name | Description |
-|------|-------------|
-| <a name="output_endpoint"></a> [endpoint](#output\_endpoint) | n/a |
+| Name | Description | sensitive |
+|------|-------------|-----------|
+| <a name="output_endpoint"></a> [endpoint](#output\_endpoint) | n/a | yes |
+|   |   |   |   |
